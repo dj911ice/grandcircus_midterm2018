@@ -22,10 +22,10 @@ namespace GCLibrary2018
             }
         }
 
-        public static void WriteToFile(List<Book> books)
+        public static void WriteToFile(ref List<Book> BookList)
         {
             StreamWriter Writer = new StreamWriter("../../Library.txt");
-            foreach (Book book in books)
+            foreach (Book book in BookList)
             {
                 Writer.WriteLine($"{book}");
             }
