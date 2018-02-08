@@ -56,13 +56,13 @@ namespace GCLibrary2018
 
         public static List<Book> LookByTitleKeyword (ref List<Book> BookList, string keyword)
         {
-            List<Book> authorbooks = new List<Book>();
+            List<Book> titlebooks = new List<Book>();
             foreach (Book book in BookList)
             {
                 if (book.title.Contains(keyword))
-                    authorbooks.Add(book);
+                    titlebooks.Add(book);
             }
-            return authorbooks;
+            return titlebooks;
         }
 
         public static void CheckOutBook (Book book)
