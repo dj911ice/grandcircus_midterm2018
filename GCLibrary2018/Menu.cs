@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace GCLibrary2018
 {
@@ -19,6 +20,16 @@ namespace GCLibrary2018
             {
                 Console.WriteLine(b.title);
             }
+        }
+
+        public static void WriteToFile(List<Book> books)
+        {
+            StreamWriter Writer = new StreamWriter("../../Library.txt");
+            foreach (Book book in books)
+            {
+                Writer.WriteLine($"{book}");
+            }
+            Writer.Close();
         }
     }
 }
