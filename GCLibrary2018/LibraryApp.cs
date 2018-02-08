@@ -67,15 +67,15 @@ namespace GCLibrary2018
             return authorbooks;
         }
 
-        public static void IwantTheBook (Book book)
+        public static void CheckOutBook (Book book)
         {
             if (book.status == BookStatus.CheckedOut)
                 Console.WriteLine($"Sorry this book is checked out, the return day is {book.duedate}");
             else
             {
-                DateTime duedate = DateTime.Now;
+                DateTime dt = DateTime.Now.AddDays(14);
                 book.status = BookStatus.CheckedOut;
-                book.duedate = duedate.AddDays(14);
+                book.duedate = String.Format("{0:MM/dd/yyyy}", dt);
             }
         }
 
