@@ -25,5 +25,10 @@ namespace GCLibrary2018
                 }
             }
         }
+        public static void Search()
+        {
+            Console.WriteLine("Do you want to search by Title or Author?");
+            
+        }
     }
 }
