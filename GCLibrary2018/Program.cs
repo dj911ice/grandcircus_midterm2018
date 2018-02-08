@@ -9,6 +9,7 @@ namespace GCLibrary2018
 {
     class Program
     {
+        public static List<Book> BookList = LibraryApp.CreateBookList("../../Library.txt");
         static void Main(string[] args)
         {
             RunProgram();
@@ -21,7 +22,16 @@ namespace GCLibrary2018
             Menu.GCLMenu();
             //Console.WriteLine("Enter Custom Text Here");
             string Input = Console.ReadLine();
-            Console.WriteLine($"Enter Custom Text Here {Input}");
+            if (Input == "1")
+                LibraryApp.PrintBookList(ref BookList);
+            else if (Input == "2")
+                Validation.Search(ref BookList);
+            else if (Input == "3")
+                LibraryApp.CheckOutBook(Validation.ConfirmBook(ref BookList));
+            else if (Input == "4")
+                LibraryApp.ReturnBook(Validation.ConfirmBook(ref BookList));
+            else if (Input == "5")
+
 
             // Code
             // Method calls
