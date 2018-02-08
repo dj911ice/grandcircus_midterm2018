@@ -25,10 +25,21 @@ namespace GCLibrary2018
                 }
             }
         }
-        public static void Search()
+        public static void Search(ref List<Book>BookList)
         {
             Console.WriteLine("Do you want to search by Title or Author?");
-            
+            if (Console.ReadLine().ToLower()=="title")
+            {
+                Console.WriteLine("Please enter a title...");
+                string Input = Console.ReadLine();
+                LibraryApp.LookByTitleKeyword(BookList,Input);
+            }
+            else if (Console.ReadLine().ToLower()=="author")
+            {
+                Console.WriteLine("Please enter an author...");
+                string Input = Console.ReadLine();
+                LibraryApp.LookByAuthor(BookList,Input);
+            }
         }
     }
 }
