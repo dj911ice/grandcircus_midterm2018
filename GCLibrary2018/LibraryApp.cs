@@ -9,6 +9,8 @@ namespace GCLibrary2018
 {
     class LibraryApp
     {
+              
+       
         public static List<Book> CreateBookList(string FileName)
         {
             List<Book> Booklist = new List<Book>();
@@ -20,7 +22,8 @@ namespace GCLibrary2018
             {
                 BookInfo = CurrentLine.Split(',');
                 Enum.TryParse(BookInfo[3], out BookStatus Test);
-                Book newBook = new Book(BookInfo[0], BookInfo[1], DateTime.Parse(BookInfo[2]), Test);
+                DateTime dt = DateTime.Now;
+                Book newBook = new Book(BookInfo[0], BookInfo[1], dt, Test);
                 
                 Booklist.Add(newBook);
                 CurrentLine = Reader.ReadLine(); 
@@ -63,5 +66,20 @@ namespace GCLibrary2018
             }
             return authorbooks;
         }
+
+        public static void IwantTheBook (Book book)
+        {
+            if (book.status == BookStatus.CheckedOut)
+                Console.WriteLine($"Sorry this book is checked out, the return day is {book.duedate}");
+            else
+            {
+                DateTime duedate = DateTime.Now;
+                book.status = BookStatus.CheckedOut;
+                book.duedate = duedate.AddDays(14);
+            }
+        }
+
+
+
     }
 }
