@@ -28,5 +28,18 @@ namespace GCLibrary2018
             Reader.Close(); 
             return Booklist;
         }
+
+        public static void PrintBookList(List<Book> BookList)
+        {
+            Console.WriteLine(new string('x', 40));
+
+            foreach (Book thisBook in BookList)
+            {
+                if (thisBook.status == BookStatus.OnShelf)
+                    Console.WriteLine($"{thisBook.title} by {thisBook.author} Status: {thisBook.status}");
+                else
+                    Console.WriteLine($"{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}");
+            }
+        }
     }
 }
