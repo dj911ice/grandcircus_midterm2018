@@ -11,14 +11,14 @@ namespace GCLibrary2018
     {
         public string title { get; set; }
         public string author { get; set; }
-        public DateTime duedate { get; set; }
+        public string duedate { get; set; }
         public BookStatus status { get; set; }
 
-        public Book(string Title, string Author, DateTime DueDate, BookStatus Status)
+        public Book(string Title, string Author, DateTime dt, BookStatus Status)
         {
             title = Title;
             author = Author;
-            duedate = DueDate;
+            duedate = String.Format("{0:MM/dd/yyyy}", dt);
             status = Status;
         }
 
@@ -26,7 +26,7 @@ namespace GCLibrary2018
         {
             title = "";
             author = "";
-            duedate = DateTime.Now;
+            duedate = DateTime.Now.ToString();
             status = BookStatus.OnShelf;
         }
     }
