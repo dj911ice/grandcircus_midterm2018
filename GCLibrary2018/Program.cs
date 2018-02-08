@@ -14,6 +14,7 @@ namespace GCLibrary2018
             RunProgram();
             ContinueProgram();
         }
+
         public static void RunProgram()
         {
             
@@ -25,6 +26,7 @@ namespace GCLibrary2018
             // Code
             // Method calls
         }
+
         public static void ContinueProgram()
         {
             Console.WriteLine("Enter Custom Text Here? Y/N");

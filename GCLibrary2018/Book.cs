@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace GCLibrary2018
 {
-
     class Book
     {
         public string title { get; set; }

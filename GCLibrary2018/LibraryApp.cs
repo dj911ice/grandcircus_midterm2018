@@ -9,8 +9,6 @@ namespace GCLibrary2018
 {
     class LibraryApp
     {
-              
-       
         public static List<Book> CreateBookList(string FileName)
         {
             List<Book> Booklist = new List<Book>();
@@ -78,8 +76,5 @@ namespace GCLibrary2018
                 book.duedate = String.Format("{0:MM/dd/yyyy}", dt);
             }
         }
-
-
-
     }
 }
