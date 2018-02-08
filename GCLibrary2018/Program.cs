@@ -13,31 +13,25 @@ namespace GCLibrary2018
         {
             RunProgram();
             ContinueProgram();
+            Console.WriteLine("Goodbye!");
         }
         public static void RunProgram()
         {
-            // Menu.GCLMenu(); Prints Menu
-            Console.WriteLine("Enter Custom Text Here");
+            Menu.GCLMenu();
+            Console.WriteLine("Please enter a menu number");
             string Input = Console.ReadLine();
             Console.WriteLine($"Enter Custom Text Here {Input}");
 
             // Code
             // Method calls
         }
+
         public static void ContinueProgram()
         {
-            Console.WriteLine("Enter Custom Text Here? Y/N");
+            Console.WriteLine("Would you like to perform another action? Y/N");
             string Continue = Console.ReadLine();
-
-            while (Regex.Match(Continue, @"^[Y|y]$").Success)
-            {
+            if (Validation.Continue(Continue) == true)
                 RunProgram();
-                Continue = "";
-                Console.WriteLine("Enter Custom Text Here? Y/N");
-                Continue = Console.ReadLine();
-            }
-            Console.WriteLine("Enter Custom Text Here");
-            Console.ReadLine();
         }
     }
 }
