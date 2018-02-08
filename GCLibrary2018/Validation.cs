@@ -32,13 +32,13 @@ namespace GCLibrary2018
             {
                 Console.WriteLine("Please enter a title...");
                 string Input = Console.ReadLine();
-                LibraryApp.LookByTitleKeyword(BookList,Input);
+                LibraryApp.LookByTitleKeyword(ref BookList, Input);
             }
             else if (Console.ReadLine().ToLower()=="author")
             {
                 Console.WriteLine("Please enter an author...");
                 string Input = Console.ReadLine();
-                LibraryApp.LookByAuthor(BookList,Input);
+                LibraryApp.LookByAuthor(ref BookList, Input);
             }
         }
     }
