@@ -71,10 +71,17 @@ namespace GCLibrary2018
                 Console.WriteLine($"Sorry this book is checked out, the return day is {book.duedate}");
             else
             {
-                DateTime dt = DateTime.Now.AddDays(14);
+                DateTime dt = DateTime.Today.AddDays(14);
                 book.status = BookStatus.CheckedOut;
                 book.duedate = String.Format("{0:MM/dd/yyyy}", dt);
             }
+        }
+
+        public static void ReturnBook (Book book)
+        {
+            DateTime duedate = DateTime.Today;
+            book.status = BookStatus.OnShelf;
+            book.duedate = null;
         }
     }
 }
