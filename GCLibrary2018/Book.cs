@@ -21,5 +21,13 @@ namespace GCLibrary2018
             duedate = DueDate;
             status = Status;
         }
+
+        public Book()
+        {
+            title = "";
+            author = "";
+            duedate = DateTime.MinValue;
+            status = BookStatus.OnShelf;
+        }
     }
 }
