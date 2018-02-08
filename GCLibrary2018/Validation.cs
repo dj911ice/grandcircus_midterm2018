@@ -25,6 +25,32 @@ namespace GCLibrary2018
                 }
             }
         }
+
+        public static Book ConfirmBook(ref List<Book> BookList)
+        {
+            int z = 0;
+            foreach (Book x in BookList)
+            {
+                Console.Write($"{z}..... {x.title} by {x.author}\n");
+                z++;
+            }
+
+            Console.WriteLine("Which book are you referring to? (1-12)");
+            string input = Console.ReadLine();
+            int BookIndex;
+            int.TryParse(input, out BookIndex);
+            while (true)
+            {
+                if (BookIndex > 0 && BookIndex <= 12)
+                    return BookList[BookIndex];
+                else
+                {
+                    Console.WriteLine("I didn't understand. Try again!");
+                    int.TryParse(input, out BookIndex);
+                }
+            }
+        }
+
         public static void Search(ref List<Book>BookList)
         {
             Console.WriteLine("Do you want to search by Title or Author?");
