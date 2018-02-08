@@ -41,5 +41,27 @@ namespace GCLibrary2018
                     Console.WriteLine($"{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}");
             }
         }
+
+        public static List<Book> LookByAuthor(List<Book> Books,string Author)
+        {
+            List<Book> authorbooks = new List<Book>();
+            foreach (var book in Books)
+            {
+                if (book.author.Contains(Author))
+                    authorbooks.Add(book);   
+            }
+            return authorbooks;
+        }
+
+        public static List<Book> LookByTitleKeyword (List<Book> Books, string keyword)
+        {
+            List<Book> authorbooks = new List<Book>();
+            foreach (Book book in Books)
+            {
+                if (book.title.Contains(keyword))
+                    authorbooks.Add(book);
+            }
+            return authorbooks;
+        }
     }
 }

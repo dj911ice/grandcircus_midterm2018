@@ -17,7 +17,7 @@ namespace GCLibrary2018
         }
         public static void RunProgram()
         {
-            Menu.GCLMenu();
+            Menu.GCLMenu(); 
             Console.WriteLine("Please enter a menu number");
             string Input = Console.ReadLine();
             Console.WriteLine($"Enter Custom Text Here {Input}");

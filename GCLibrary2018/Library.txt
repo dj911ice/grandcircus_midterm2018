@@ -3,10 +3,10 @@ Choke,Chuck Palahniuk,,OnShelf
 House of Leaves, Mark Z. Danielewski,,OnShelf
 Fear and Loathing in Las Vegas: A Savage Journey to the Heart of the American Dream,Hunter S. Thompson,,OnShelf
 The Case Against the Global Economy and for a Turn Towards Localization,Jerry Mander,,OnShelf
-Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt and Dave Thomas with Matt Hargett,,OnShelf
-The Pragmatic Programmer,Andrew Hunt and David Thomas,,OnShelf
+Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt Hargett,,OnShelf
+The Pragmatic Programmer,Andrew Hunt David Thomas,,OnShelf
 HTML5 and CSS3 (2nd edition),Brian P. Hogan,,OnShef
 Simplifying JavaScript,Joe Morgan,,OnShelf
 Hello Android (4th edition),Ed Burnette,,OnShelf
-Programming Ruby 1.9 & 2.0 (4th edition),Dave Thomas with Chad Fowler and Andy Hunt,,OnShelf
-Learning ASP.NET Core 2.0: Build modern web apps with ASP.NET Core 2.0 MVC and EF Core 2,Jason De Oliveira and Michel Bruchet,,Onshelf  
+Programming Ruby 1.9 & 2.0 (4th edition),Dave Thomas Chad Fowler Andy Hunt,,OnShelf
+Learning ASP.NET Core 2.0: Build modern web apps with ASP.NET Core 2.0 MVC and EF Core 2,Jason De Oliveira Michel Bruchet,,Onshelf  
