@@ -30,7 +30,7 @@ namespace GCLibrary2018
             return Booklist;
         }
 
-        public static void PrintBookList(List<Book> BookList)
+        public static void PrintBookList(ref List<Book> BookList)
         {
             Console.WriteLine(new string('x', 40));
 
@@ -43,10 +43,10 @@ namespace GCLibrary2018
             }
         }
 
-        public static List<Book> LookByAuthor(List<Book> Books,string Author)
+        public static List<Book> LookByAuthor(ref List<Book> BookList,string Author)
         {
             List<Book> authorbooks = new List<Book>();
-            foreach (var book in Books)
+            foreach (var book in BookList)
             {
                 if (book.author.Contains(Author))
                     authorbooks.Add(book);   
@@ -54,10 +54,10 @@ namespace GCLibrary2018
             return authorbooks;
         }
 
-        public static List<Book> LookByTitleKeyword (List<Book> Books, string keyword)
+        public static List<Book> LookByTitleKeyword (ref List<Book> BookList, string keyword)
         {
             List<Book> authorbooks = new List<Book>();
-            foreach (Book book in Books)
+            foreach (Book book in BookList)
             {
                 if (book.title.Contains(keyword))
                     authorbooks.Add(book);
