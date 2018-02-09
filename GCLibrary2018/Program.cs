@@ -41,7 +41,7 @@ namespace GCLibrary2018
                 }
                 else if (Input == "4")
                 {
-                    LibraryApp.ReturnBook(Validation.ConfirmBook(ref BookList));
+                    LibraryApp.ReturnBook(Validation.ConfirmReturn(ref BookList));
                     Input = Menu.GCLMenu();
                 }
                 else if (Input == "5")

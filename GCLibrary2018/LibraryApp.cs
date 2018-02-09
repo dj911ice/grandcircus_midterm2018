@@ -82,7 +82,7 @@ namespace GCLibrary2018
         public static void ReturnBook (Book book)
         {
             book.status = "On Shelf";
-            book.duedate = null;
+            book.duedate = DateTime.Today.ToString();
             Console.WriteLine("Thank you for not stealing our book!\n");
         }
     }

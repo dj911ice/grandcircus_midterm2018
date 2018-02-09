@@ -35,23 +35,28 @@ namespace GCLibrary2018
 
         public static Book ConfirmReturn(ref List<Book> BookList)
         {
-            int z = 1;
-            foreach (Book x in BookList)
+            List<Book> CheckedOut = new List<Book>();
+            for (int i = 0; i < BookList.Count; i++)
             {
-                if (x.status == "Checked Out")
+                if (BookList[i].status == "Checked Out")
                 {
-                    Console.WriteLine($"{z}..... {x.title} by {x.author}\n");
-                    z++;
+                    CheckedOut.Add(BookList[i]);
                 }
             }
 
-            Console.WriteLine($"Which book would you like to return? (1-{z})");
+            int z = 1;
+            foreach (Book x in CheckedOut)
+            {
+                Console.WriteLine($"{z}..... {x.title} by {x.author}");
+            }
+            Console.WriteLine($"Which book would you like to return?");
             string input = Console.ReadLine();
+
             int.TryParse(input, out int BookIndex);
             while (true)
             {
-                if (BookIndex > 0 && BookIndex <= 12)
-                    return BookList[BookIndex - 1];
+                if (BookIndex > 0 && BookIndex <= CheckedOut.Count)
+                    return CheckedOut[BookIndex-1];
                 else
                 {
                     Console.WriteLine("I didn't understand. Try again!");
