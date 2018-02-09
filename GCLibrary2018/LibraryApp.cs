@@ -31,7 +31,7 @@ namespace GCLibrary2018
 
         public static void PrintBookList(ref List<Book> BookList)
         {
-            Console.WriteLine(new string('x', 40));
+            Console.WriteLine(new string('=', 40));
 
             foreach (Book thisBook in BookList)
             {
@@ -40,6 +40,8 @@ namespace GCLibrary2018
                 else
                     Console.WriteLine($"{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}");
             }
+            Console.WriteLine(new string('=', 40));
+            Console.WriteLine();
         }
 
         public static List<Book> LookByAuthor(ref List<Book> BookList, string Author)
