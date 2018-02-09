@@ -47,7 +47,7 @@ namespace GCLibrary2018
         public static List<Book> LookByAuthor(ref List<Book> BookList, string Author)
         {
             List<Book> authorbooks = new List<Book>();
-            foreach (var book in BookList)
+            foreach (Book book in BookList)
             {
                 if (book.author.ToLower().Contains(Author))
                     authorbooks.Add(book);   
