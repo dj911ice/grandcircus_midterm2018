@@ -19,9 +19,8 @@ namespace GCLibrary2018
             while (CurrentLine != null) 
             {
                 BookInfo = CurrentLine.Split(',');
-                Enum.TryParse(BookInfo[3], out BookStatus Test);
                 DateTime dt = DateTime.Now;
-                Book newBook = new Book(BookInfo[0], BookInfo[1], dt, Test);
+                Book newBook = new Book(BookInfo[0], BookInfo[1], BookInfo[2], BookInfo[3]);
                 
                 Booklist.Add(newBook);
                 CurrentLine = Reader.ReadLine(); 
@@ -36,14 +35,14 @@ namespace GCLibrary2018
 
             foreach (Book thisBook in BookList)
             {
-                if (thisBook.status == BookStatus.OnShelf)
+                if (thisBook.status == "On Shelf")
                     Console.WriteLine($"{thisBook.title} by {thisBook.author} Status: {thisBook.status}");
                 else
                     Console.WriteLine($"{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}");
             }
         }
 
-        public static List<Book> LookByAuthor(ref List<Book> BookList,string Author)
+        public static List<Book> LookByAuthor(ref List<Book> BookList, string Author)
         {
             List<Book> authorbooks = new List<Book>();
             foreach (var book in BookList)
@@ -67,12 +66,12 @@ namespace GCLibrary2018
 
         public static void CheckOutBook (Book book)
         {
-            if (book.status == BookStatus.CheckedOut)
+            if (book.status == "Checked Out")
                 Console.WriteLine($"Sorry this book is checked out, the return day is {book.duedate}");
             else
             {
                 DateTime dt = DateTime.Today.AddDays(14);
-                book.status = BookStatus.CheckedOut;
+                book.status = "Checked Out";
                 book.duedate = String.Format("{0:MM/dd/yyyy}", dt);
             }
         }
@@ -80,7 +79,7 @@ namespace GCLibrary2018
         public static void ReturnBook (Book book)
         {
             DateTime duedate = DateTime.Today;
-            book.status = BookStatus.OnShelf;
+            book.status = "On Shelf";
             book.duedate = null;
         }
     }

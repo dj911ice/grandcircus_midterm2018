@@ -12,8 +12,9 @@ namespace GCLibrary2018
         public static List<Book> BookList = LibraryApp.CreateBookList("../../Library.txt");
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to the Grand Circus Library!\n\n");
             RunProgram();
-            ContinueProgram();
+            Console.WriteLine("Goodbye!");
         }
 
         public static void RunProgram()
@@ -21,7 +22,7 @@ namespace GCLibrary2018
             while (true)
             {
                 Menu.GCLMenu();
-                //Console.WriteLine("Enter Custom Text Here");
+                Console.WriteLine("Enter a number to perform an action!");
                 string Input = Console.ReadLine();
                 if (Input == "1")
                     LibraryApp.PrintBookList(ref BookList);
@@ -32,31 +33,16 @@ namespace GCLibrary2018
                 else if (Input == "4")
                     LibraryApp.ReturnBook(Validation.ConfirmBook(ref BookList));
                 else if (Input == "5")
+                {
                     Menu.WriteToFile(ref BookList);
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("That's not an option! Try again!");
                     Input = Console.ReadLine();
                 }
             }
-            // Code
-            // Method calls
-        }
-
-        public static void ContinueProgram()
-        {
-            Console.WriteLine("Enter Custom Text Here? Y/N");
-            string Continue = Console.ReadLine();
-
-            while (Regex.Match(Continue, @"^[Y|y]$").Success)
-            {
-                RunProgram();
-                Continue = "";
-                Console.WriteLine("Enter Custom Text Here? Y/N");
-                Continue = Console.ReadLine();
-            }
-            Console.WriteLine("Enter Custom Text Here");
-            Console.ReadLine();
         }
     }
 }

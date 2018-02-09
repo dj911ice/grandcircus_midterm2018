@@ -1,12 +1,12 @@
-Google It!,Kamel Rushaidat,1/1/0001,OnShelf
-Choke,Chuck Palahniuk,1/1/0001,OnShelf
-House of Leaves, Mark Z. Danielewski,1/1/0001,OnShelf
-Fear and Loathing in Las Vegas: A Savage Journey to the Heart of the American Dream,Hunter S. Thompson,1/1/0001,OnShelf
-The Case Against the Global Economy and for a Turn Towards Localization,Jerry Mander,1/1/0001,OnShelf
-Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt Hargett,1/1/0001,OnShelf
-The Pragmatic Programmer,Andrew Hunt David Thomas,1/1/0001,OnShelf
-HTML5 and CSS3 (2nd edition),Brian P. Hogan,1/1/0001,OnShef
-Simplifying JavaScript,Joe Morgan,1/1/0001,OnShelf
-Hello Android (4th edition),Ed Burnette,,OnShelf
-Programming Ruby 1.9 & 2.0 (4th edition),Dave Thomas Chad Fowler Andy Hunt,1/1/0001,OnShelf
-Learning ASP.NET Core 2.0: Build modern web apps with ASP.NET Core 2.0 MVC and EF Core 2,Jason De Oliveira Michel Bruchet,1/1/0001,Onshelf  
+Google It!,Kamel Rushaidat,1/1/0001,On Shelf
+Choke,Chuck Palahniuk,1/1/0001,On Shelf
+House of Leaves, Mark Z. Danielewski,1/1/0001,On Shelf
+Fear and Loathing in Las Vegas,Hunter S. Thompson,1/1/0001,On Shelf
+The Case Against the Global Economy and for a Turn Towards Localization,Jerry Mander,1/1/0001,On Shelf
+Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt Hargett,1/1/0001,On Shelf
+The Pragmatic Programmer,Andrew Hunt David Thomas,1/1/0001,On Shelf
+HTML5 and CSS3 (2nd edition),Brian P. Hogan,1/1/0001,On Shelf
+Simplifying JavaScript,Joe Morgan,1/1/0001,On Shelf
+Hello Android (4th edition),Ed Burnette,1/1/0001,On Shelf
+Programming Ruby 1.9 & 2.0,Dave Thomas Chad Fowler Andy Hunt,1/1/0001,On Shelf
+Learning ASP.NET Core 2.0,Jason De Oliveira Michel Bruchet,1/1/0001,On Shelf  

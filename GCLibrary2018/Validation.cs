@@ -4,31 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+
 namespace GCLibrary2018
 {
     class Validation
     {
-        public static bool Continue(string Input)
-        {
-            while (true)
-            {
-                if (Regex.Match(Input, "^(y|yes|Y|Yes)$").Success)
-                {
-                    return true;
-                }
-                else if (Regex.Match(Input, "^(n|no|N|No)$").Success)
-                    return false;
-                else
-                {
-                    Console.WriteLine("I didn't understand that. Try again!");
-                    Input = Console.ReadLine();
-                }
-            }
-        }
+        //public static bool Continue()
+        //{
+        //    Console.WriteLine("Would you like to perform another action?");
+        //    string Input = Console.ReadLine().ToLower();
+        //    while (true)
+        //    {
+        //        if (Regex.Match(Input, "^(y|yes)$").Success)
+        //        {
+        //            return true;
+        //        }
+        //        else if (Regex.Match(Input, "^(n|no)$").Success)
+        //            return false;
+        //        else
+        //        {
+        //            Console.WriteLine("I didn't understand that. Try again!");
+        //            Input = Console.ReadLine();
+        //        }
+        //    }
+        //}
 
         public static Book ConfirmBook(ref List<Book> BookList)
         {
-            int z = 0;
+            int z = 1;
             foreach (Book x in BookList)
             {
                 Console.Write($"{z}..... {x.title} by {x.author}\n");
@@ -42,11 +45,11 @@ namespace GCLibrary2018
             while (true)
             {
                 if (BookIndex > 0 && BookIndex <= 12)
-                    return BookList[BookIndex];
+                    return BookList[BookIndex-1];
                 else
                 {
                     Console.WriteLine("I didn't understand. Try again!");
-                    int.TryParse(input, out BookIndex);
+                    int.TryParse(Console.ReadLine(), out BookIndex);
                 }
             }
         }
@@ -58,7 +61,7 @@ namespace GCLibrary2018
             {
                 Console.WriteLine("Please enter a title...");
                 string Input = Console.ReadLine();
-                LibraryApp.LookByTitleKeyword(ref BookList, Input);
+                Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
             }
             else if (Console.ReadLine().ToLower()=="author")
             {

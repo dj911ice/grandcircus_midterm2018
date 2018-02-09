@@ -11,7 +11,7 @@ namespace GCLibrary2018
     {
         public static void GCLMenu ()
         {
-            Console.WriteLine("Welcome to the Grand Circus Library!\n\n[1] Display Library\n[2] Search Library\n[3] Checkout a Book\n[4] Return a Book\n[5] Exit Library");
+            Console.WriteLine("[1] Display Library\n[2] Search Library\n[3] Checkout a Book\n[4] Return a Book\n[5] Exit Library");
         }
 
         public static void PrintTitles (List<Book>BookList)
@@ -27,7 +27,7 @@ namespace GCLibrary2018
             StreamWriter Writer = new StreamWriter("../../Library.txt");
             foreach (Book book in BookList)
             {
-                Writer.WriteLine($"{book}");
+                Writer.WriteLine($"{book.title},{book.author},{book.duedate},{book.status}");
             }
             Writer.Close();
         }

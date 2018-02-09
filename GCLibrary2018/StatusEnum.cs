@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace GCLibrary2018
 {
-    public enum BookStatus { OnShelf = 1, CheckedOut };
+    //public enum BookStatus { OnShelf = 1, CheckedOut };
 }
