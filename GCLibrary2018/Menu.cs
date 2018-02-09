@@ -21,7 +21,7 @@ namespace GCLibrary2018
         {
             foreach (Book b in BookList)
             {
-                Console.WriteLine(b.title);
+                Console.WriteLine($"{b.title} by {b.author}");
             }
         }
 

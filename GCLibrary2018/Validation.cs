@@ -57,17 +57,19 @@ namespace GCLibrary2018
         public static void Search(ref List<Book>BookList)
         {
             Console.WriteLine("Do you want to search by Title or Author?");
-            if (Console.ReadLine().ToLower()=="title")
+            string TorA = Console.ReadLine().ToLower();
+            if (TorA=="title")
             {
                 Console.WriteLine("Please enter a title...");
                 string Input = Console.ReadLine();
                 Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
             }
-            else if (Console.ReadLine().ToLower()=="author")
+
+            if (TorA=="author")
             {
                 Console.WriteLine("Please enter an author...");
                 string Input = Console.ReadLine();
-                LibraryApp.LookByAuthor(ref BookList, Input);
+                Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
             }
         }
     }

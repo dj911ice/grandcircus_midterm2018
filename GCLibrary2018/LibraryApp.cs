@@ -47,7 +47,7 @@ namespace GCLibrary2018
             List<Book> authorbooks = new List<Book>();
             foreach (var book in BookList)
             {
-                if (book.author.Contains(Author))
+                if (book.author.ToLower().Contains(Author))
                     authorbooks.Add(book);   
             }
             return authorbooks;
@@ -58,7 +58,7 @@ namespace GCLibrary2018
             List<Book> titlebooks = new List<Book>();
             foreach (Book book in BookList)
             {
-                if (book.title.Contains(keyword))
+                if (book.title.ToLower().Contains(keyword))
                     titlebooks.Add(book);
             }
             return titlebooks;
