@@ -1,0 +1,133 @@
+
+Dj911ice@Dj911ice MINGW64 ~
+$ cd Desktop/DotNetDev
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev
+$ ls
+Bootcamps/  getaroomds.txt
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev
+$ cd Bootcamps/
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps
+$ ls
+GrandCircus/
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps
+$ cd GrandCircus/
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus
+$ ls
+ Bearkout020118.txt   GCD11notes.txt   GCD4notes.txt   lab_hints.txt
+ breakout020118.cs    GCD12notes.txt   GCD5notes.txt   LinkedIn_ws.txt
+'C# Exercise.pdf'     GCD13notes.txt   GCD6notes.txt   Snippets/
+ Dotnetcsharp/        GCD1notes.txt    GCD7notes.txt   SoftskillsJan2918.txt
+ easy_git.txt         GCD2notes.txt    GCD8notes.txt   while_loop.txt
+ GCD10notes.txt       GCD3notes.txt    GCD9notes.txt
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus
+$ cd Dotnetcsharp/
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus/Dotnetcsharp
+$ ls
+Bonus-20/                Lab7/
+CarApp2018/              Lab8/
+CompareToChallenge2018/  NodaTimeTest/
+CSharpCoreIntro/         Program3/
+DebuggingTestCase2018/   ProgramQ2/
+delieverablep1/          Test2DArrays2018/
+delieverablep2/          TestAbstractAndInterfaces2018/
+ExceptionHandling2018/   TestArrayLists2018/
+GCLibrary2018/           TestArrays2018/
+GCW2ACSQ1/               TestCollections2018/
+Lab1/                    TestControlStatments2018/
+lab10/                   TestDebugging2018/
+lab11/                   TestFileIO2018/
+Lab12/                   TestForloops2018/
+Lab15/                   TestJaggedArrays2018/
+Lab2/                    TestMethods2018/
+Lab3/                    TestOOP2018/
+Lab4/                    TestRecursion2018/
+Lab5/                    TestString2018/
+Lab6/                    TestSwitch2018/
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus/Dotnetcsharp
+$ cd GCLibrary2018/
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus/Dotnetcsharp                                                                     /GCLibrary2018 (master)
+$ ls
+GCLibrary2018/  GCLibrary2018.sln
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus/Dotnetcsharp                                                                     /GCLibrary2018 (master)
+$ cd GCLibrary2018
+
+Dj911ice@Dj911ice MINGW64 ~/Desktop/DotNetDev/Bootcamps/GrandCircus/Dotnetcsharp                                                                     /GCLibrary2018/GCLibrary2018 (master)
+$ ls
+Commit Number: 30
+================================================================================
+commit 24411dd7055bb05738778c19dbe2eaa90826b900 (HEAD -> master, origin/master)
+Author: DanE <edwardsdan001@gmail.com>
+Date:   Thu Feb 8 21:58:40 2018 -0500
+
+    removed enum, continue method, and added some functionality
+
+diff --git a/GCLibrary2018/Book.cs b/GCLibrary2018/Book.cs
+index 2014504..eb12b80 100644
+--- a/GCLibrary2018/Book.cs
++++ b/GCLibrary2018/Book.cs
+@@ -11,13 +11,13 @@ namespace GCLibrary2018
+         public string title { get; set; }
+         public string author { get; set; }
+         public string duedate { get; set; }
+-        public BookStatus status { get; set; }
++        public string status { get; set; }
+
+-        public Book(string Title, string Author, DateTime dt, BookStatus Status                                                                     )
++        public Book(string Title, string Author, string DueDate, string Status)
+         {
+             title = Title;
+             author = Author;
+:...skipping...
+commit 24411dd7055bb05738778c19dbe2eaa90826b900 (HEAD -> master, origin/master)
+Author: DanE <edwardsdan001@gmail.com>
+Date:   Thu Feb 8 21:58:40 2018 -0500
+
+    removed enum, continue method, and added some functionality
+
+diff --git a/GCLibrary2018/Book.cs b/GCLibrary2018/Book.cs
+index 2014504..eb12b80 100644
+--- a/GCLibrary2018/Book.cs
++++ b/GCLibrary2018/Book.cs
+@@ -11,13 +11,13 @@ namespace GCLibrary2018
+         public string title { get; set; }
+         public string author { get; set; }
+         public string duedate { get; set; }
+-        public BookStatus status { get; set; }
++        public string status { get; set; }
+
+-        public Book(string Title, string Author, DateTime dt, BookStatus Status)
++        public Book(string Title, string Author, string DueDate, string Status)
+         {
+             title = Title;
+             author = Author;
+-            duedate = String.Format("{0:MM/dd/yyyy}", dt);
++            duedate = DueDate;
+             status = Status;
+         }
+
+@@ -26,7 +26,7 @@ namespace GCLibrary2018
+             title = "";
+             author = "";
+             duedate = DateTime.Now.ToString();
+-            status = BookStatus.OnShelf;
++            status = "On Shelf";
+         }
+     }
+ }
+diff --git a/GCLibrary2018/Library.txt b/GCLibrary2018/Library.txt
+index 0180156..ffa30b8 100644
+--- a/GCLibrary2018/Library.txt
++++ b/GCLibrary2018/Library.txt
+@@ -1,12 +1,12 @@
+-Google It!,Kamel Rushaidat,1/1/0001,OnShelf
+
