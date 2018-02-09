@@ -20,12 +20,38 @@ namespace GCLibrary2018
 
             Console.WriteLine("Which book are you referring to? (1-12)");
             string input = Console.ReadLine();
-            int BookIndex;
-            int.TryParse(input, out BookIndex);
+            int.TryParse(input, out int BookIndex);
             while (true)
             {
                 if (BookIndex > 0 && BookIndex <= 12)
                     return BookList[BookIndex-1];
+                else
+                {
+                    Console.WriteLine("I didn't understand. Try again!");
+                    int.TryParse(Console.ReadLine(), out BookIndex);
+                }
+            }
+        }
+
+        public static Book ConfirmReturn(ref List<Book> BookList)
+        {
+            int z = 1;
+            foreach (Book x in BookList)
+            {
+                if (x.status == "Checked Out")
+                {
+                    Console.WriteLine($"{z}..... {x.title} by {x.author}\n");
+                    z++;
+                }
+            }
+
+            Console.WriteLine($"Which book would you like to return? (1-{z})");
+            string input = Console.ReadLine();
+            int.TryParse(input, out int BookIndex);
+            while (true)
+            {
+                if (BookIndex > 0 && BookIndex <= 12)
+                    return BookList[BookIndex - 1];
                 else
                 {
                     Console.WriteLine("I didn't understand. Try again!");
