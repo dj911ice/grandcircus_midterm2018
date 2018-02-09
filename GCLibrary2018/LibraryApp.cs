@@ -78,7 +78,6 @@ namespace GCLibrary2018
 
         public static void ReturnBook (Book book)
         {
-            DateTime duedate = DateTime.Today;
             book.status = "On Shelf";
             book.duedate = null;
         }
