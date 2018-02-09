@@ -20,31 +20,29 @@ namespace GCLibrary2018
 
         public static void RunProgram()
         {
-            Menu.GCLMenu();
-            Console.WriteLine("Enter a number to perform an action!");
-            string Input = Console.ReadLine();
+            string Input = Menu.GCLMenu();
 
             while (true)
             {
                 if (Input == "1")
                 {
                     LibraryApp.PrintBookList(ref BookList);
-                    Menu.GCLMenu();
+                    Input = Menu.GCLMenu();
                 }
                 else if (Input == "2")
                 {
                     Validation.Search(ref BookList);
-                    Menu.GCLMenu();
+                    Input = Menu.GCLMenu();
                 }
                 else if (Input == "3")
                 {
                     LibraryApp.CheckOutBook(Validation.ConfirmBook(ref BookList));
-                    Menu.GCLMenu();
+                    Input = Menu.GCLMenu();
                 }
                 else if (Input == "4")
                 {
                     LibraryApp.ReturnBook(Validation.ConfirmBook(ref BookList));
-                    Menu.GCLMenu();
+                    Input = Menu.GCLMenu();
                 }
                 else if (Input == "5")
                 {

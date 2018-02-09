@@ -9,9 +9,12 @@ namespace GCLibrary2018
 {
     class Menu
     {
-        public static void GCLMenu ()
+        public static string GCLMenu ()
         {
             Console.WriteLine("[1] Display Library\n[2] Search Library\n[3] Checkout a Book\n[4] Return a Book\n[5] Exit Library");
+            Console.WriteLine("Enter a number to perform an action!");
+            string UserInput = Console.ReadLine();
+            return UserInput;
         }
 
         public static void PrintTitles (List<Book>BookList)
