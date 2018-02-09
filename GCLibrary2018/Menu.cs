@@ -19,10 +19,15 @@ namespace GCLibrary2018
 
         public static void PrintTitles (List<Book>BookList)
         {
-            foreach (Book b in BookList)
+            if (BookList.Count != 0)
             {
-                Console.WriteLine($"{b.title} by {b.author}");
+                foreach (Book b in BookList)
+                {
+                    Console.WriteLine($"{b.title} by {b.author}");
+                }
             }
+            else
+                Console.WriteLine("No books matched that search!");
         }
 
         public static void WriteToFile(ref List<Book> BookList)
