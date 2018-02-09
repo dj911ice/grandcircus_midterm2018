@@ -10,20 +10,21 @@ namespace GCLibrary2018
     class Program
     {
         public static List<Book> BookList = LibraryApp.CreateBookList("../../Library.txt");
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Grand Circus Library!\n\n");
+            Console.WriteLine("Welcome to the Grand Circus Library!\n");
             RunProgram();
             Console.WriteLine("Goodbye!");
         }
 
         public static void RunProgram()
         {
+            Console.WriteLine("Enter a number to perform an action!");
+            string Input = Console.ReadLine();
             while (true)
             {
                 Menu.GCLMenu();
-                Console.WriteLine("Enter a number to perform an action!");
-                string Input = Console.ReadLine();
                 if (Input == "1")
                     LibraryApp.PrintBookList(ref BookList);
                 else if (Input == "2")
