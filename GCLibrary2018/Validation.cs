@@ -9,26 +9,6 @@ namespace GCLibrary2018
 {
     class Validation
     {
-        //public static bool Continue()
-        //{
-        //    Console.WriteLine("Would you like to perform another action?");
-        //    string Input = Console.ReadLine().ToLower();
-        //    while (true)
-        //    {
-        //        if (Regex.Match(Input, "^(y|yes)$").Success)
-        //        {
-        //            return true;
-        //        }
-        //        else if (Regex.Match(Input, "^(n|no)$").Success)
-        //            return false;
-        //        else
-        //        {
-        //            Console.WriteLine("I didn't understand that. Try again!");
-        //            Input = Console.ReadLine();
-        //        }
-        //    }
-        //}
-
         public static Book ConfirmBook(ref List<Book> BookList)
         {
             int z = 1;
