@@ -75,6 +75,7 @@ namespace GCLibrary2018
                 DateTime dt = DateTime.Today.AddDays(14);
                 book.status = "Checked Out";
                 book.duedate = String.Format("{0:MM/dd/yyyy}", dt);
+                Console.WriteLine($"{book.title} is due back on {book.duedate}\n");
             }
         }
 
@@ -82,6 +83,7 @@ namespace GCLibrary2018
         {
             book.status = "On Shelf";
             book.duedate = null;
+            Console.WriteLine("Thank you for not stealing our book!\n");
         }
     }
 }
