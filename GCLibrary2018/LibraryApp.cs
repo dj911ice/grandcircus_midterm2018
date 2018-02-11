@@ -31,16 +31,16 @@ namespace GCLibrary2018
 
         public static void PrintBookList(ref List<Book> BookList)
         {
-            Console.WriteLine(new string('=', 120));
+            Console.WriteLine(new string('=', 100));
             Console.Clear();
             foreach (Book thisBook in BookList)
             {
                 if (thisBook.status == "On Shelf")
-                    Console.WriteLine($"\n\t{thisBook.title} by {thisBook.author} Status: {thisBook.status}\n");
+                    Console.WriteLine($"\n\t{thisBook.title} by {thisBook.author} Status: {thisBook.status}");
                 else
-                    Console.WriteLine($"\n\t{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}\n");
+                    Console.WriteLine($"\n\t{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}");
             }
-            Console.WriteLine(new string('=', 120));
+            Console.WriteLine(new string('=', 100));
         }
 
         public static List<Book> LookByAuthor(ref List<Book> BookList, string Author)

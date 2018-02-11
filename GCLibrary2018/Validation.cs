@@ -51,6 +51,7 @@ namespace GCLibrary2018
                 foreach (Book x in CheckedOut)
                 {
                     Console.WriteLine($"\n{z}..... {x.title} by {x.author}\n");
+                    z++;
                 }
                 Console.WriteLine($"\n\nWhich book would you like to return?\n\n(Will ask twice to confirm))\n");
                 string input = Console.ReadLine();
