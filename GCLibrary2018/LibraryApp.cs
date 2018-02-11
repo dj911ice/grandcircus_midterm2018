@@ -31,17 +31,16 @@ namespace GCLibrary2018
 
         public static void PrintBookList(ref List<Book> BookList)
         {
-            Console.WriteLine(new string('=', 40));
-
+            Console.WriteLine(new string('=', 120));
+            Console.Clear();
             foreach (Book thisBook in BookList)
             {
                 if (thisBook.status == "On Shelf")
-                    Console.WriteLine($"{thisBook.title} by {thisBook.author} Status: {thisBook.status}");
+                    Console.WriteLine($"\n\t{thisBook.title} by {thisBook.author} Status: {thisBook.status}\n");
                 else
-                    Console.WriteLine($"{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}");
+                    Console.WriteLine($"\n\t{thisBook.title} by {thisBook.author} Due: {thisBook.duedate}\n");
             }
-            Console.WriteLine(new string('=', 40));
-            Console.WriteLine();
+            Console.WriteLine(new string('=', 120));
         }
 
         public static List<Book> LookByAuthor(ref List<Book> BookList, string Author)
@@ -69,13 +68,18 @@ namespace GCLibrary2018
         public static void CheckOutBook (Book book)
         {
             if (book.status == "Checked Out")
-                Console.WriteLine($"Sorry this book is checked out, the return day is {book.duedate}");
+            {
+                Console.Clear();
+                Console.WriteLine($"\n\n\n\n\n\t\t\t\tSorry this book is checked out, the return day is {book.duedate}\n\n\n\n");
+            }
+                
             else
             {
+                Console.Clear();
                 DateTime dt = DateTime.Today.AddDays(14);
                 book.status = "Checked Out";
                 book.duedate = String.Format("{0:MM/dd/yyyy}", dt);
-                Console.WriteLine($"{book.title} is due back on {book.duedate}\n");
+                Console.WriteLine($"\n\t\t\t\t\t  {book.title} is due back on {book.duedate}\n");
             }
         }
 
@@ -83,7 +87,8 @@ namespace GCLibrary2018
         {
             book.status = "On Shelf";
             book.duedate = DateTime.Today.ToString();
-            Console.WriteLine("Thank you for not stealing our book!\n");
+            Console.Clear();
+            Console.WriteLine("\n\n\n\n\t\t\t\t\tThank you for not stealing our book!\n\n\n");
         }
     }
 }

@@ -14,11 +14,11 @@ namespace GCLibrary2018
             int z = 1;
             foreach (Book x in BookList)
             {
-                Console.Write($"{z}..... {x.title} by {x.author}\n");
+                Console.Write($"\n\n\t{z}..... {x.title} by {x.author}\n\n");
                 z++;
             }
 
-            Console.WriteLine("Which book are you referring to? (1-12)");
+            Console.WriteLine("\n\n\tWhich book are you referring to? (1-12)\n\n");
             string input = Console.ReadLine();
             int.TryParse(input, out int BookIndex);
             while (true)
@@ -27,7 +27,7 @@ namespace GCLibrary2018
                     return BookList[BookIndex-1];
                 else
                 {
-                    Console.WriteLine("I didn't understand. Try again!");
+                    Console.WriteLine("\nI didn't understand. Try again!");
                     int.TryParse(Console.ReadLine(), out BookIndex);
                 }
             }
@@ -43,42 +43,46 @@ namespace GCLibrary2018
                     CheckedOut.Add(BookList[i]);
                 }
             }
-
-            int z = 1;
-            foreach (Book x in CheckedOut)
+            if (CheckedOut.Count == 0)
+                return null;
+            else
             {
-                Console.WriteLine($"{z}..... {x.title} by {x.author}");
-            }
-            Console.WriteLine($"Which book would you like to return?");
-            string input = Console.ReadLine();
-
-            int.TryParse(input, out int BookIndex);
-            while (true)
-            {
-                if (BookIndex > 0 && BookIndex <= CheckedOut.Count)
-                    return CheckedOut[BookIndex-1];
-                else
+                int z = 1;
+                foreach (Book x in CheckedOut)
                 {
-                    Console.WriteLine("I didn't understand. Try again!");
-                    int.TryParse(Console.ReadLine(), out BookIndex);
+                    Console.WriteLine($"\n{z}..... {x.title} by {x.author}\n");
                 }
-            }
+                Console.WriteLine($"\n\nWhich book would you like to return?\n\n(Will ask twice to confirm))\n");
+                string input = Console.ReadLine();
+
+                int.TryParse(input, out int BookIndex);
+                while (true)
+                {
+                    if (BookIndex > 0 && BookIndex <= CheckedOut.Count)
+                        return CheckedOut[BookIndex - 1];
+                    else
+                    {
+                        Console.WriteLine("I didn't understand. Try again!");
+                        int.TryParse(Console.ReadLine(), out BookIndex);
+                    }
+                }
+            }  
         }
 
         public static void Search(ref List<Book>BookList)
         {
-            Console.WriteLine("Do you want to search by Title or Author? (t/a)");
+            Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n\n");
             string TorA = Console.ReadLine().ToLower();
             if (Regex.IsMatch(TorA, "^(t|title)$"))
             {
-                Console.WriteLine("Please enter a title...");
+                Console.WriteLine("\n\nPlease enter a title...\n\n");
                 string Input = Console.ReadLine();
                 Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
             }
 
             if (Regex.IsMatch(TorA, "^(a|author)$"))
             {
-                Console.WriteLine("Please enter an author...");
+                Console.WriteLine("\n\nPlease enter an author...\n\n");
                 string Input = Console.ReadLine();
                 Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
             }

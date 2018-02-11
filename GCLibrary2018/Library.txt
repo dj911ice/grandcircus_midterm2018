@@ -1,10 +1,10 @@
-Google It!,Kamel Rushaidat,02/23/2018,Checked Out
-Choke,Chuck Palahniuk,2/9/2018 12:00:00 AM,On Shelf
-House of Leaves, Mark Z. Danielewski,1/1/0001,On Shelf
-Fear and Loathing in Las Vegas,Hunter S. Thompson,,On Shelf
-The Case Against the Global Economy and for a Turn Towards Localization,Jerry Mander,1/1/0001,On Shelf
-Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt Hargett,,On Shelf
-The Pragmatic Programmer,Andrew Hunt David Thomas,1/1/0001,On Shelf
+Google It!,Kamel Rushaidat,02/10/2018 12:00:00 AM,On Shelf
+Choke,Chuck Palahniuk,02/10/2018 12:00:00 AM,On Shelf
+House of Leaves, Mark Z. Danielewski,02/11/2018 12:00:00 AM,On Shelf
+Fear and Loathing in Las Vegas,Hunter S. Thompson,02/11/2018 12:00:00 AM,On Shelf
+The Case Against the Global Economy and for a Turn Towards Localization,Jerry Mander,02/11/2018 12:00:00 AM,On Shelf
+Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt Hargett,02/11/2018 12:00:00 AM,On Shelf
+The Pragmatic Programmer,Andrew Hunt David Thomas,02/10/2018 12:00:00 AM,On Shelf
 HTML5 and CSS3 (2nd edition),Brian P. Hogan,1/1/0001,On Shelf
 Simplifying JavaScript,Joe Morgan,1/1/0001,On Shelf
 Hello Android (4th edition),Ed Burnette,1/1/0001,On Shelf

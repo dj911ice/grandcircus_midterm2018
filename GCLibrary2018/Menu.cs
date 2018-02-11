@@ -11,8 +11,9 @@ namespace GCLibrary2018
     {
         public static string GCLMenu ()
         {
-            Console.WriteLine("[1] Display Library\n[2] Search Library\n[3] Checkout a Book\n[4] Return a Book\n[5] Exit Library");
-            Console.WriteLine("Enter a number to perform an action!");
+            Console.WriteLine("\t\t\t\t\tEnter a number to perform an action!");
+            Console.WriteLine("\n\n\t\t\t\t\t\t[1] Display Library\n\n\t\t\t\t\t\t[2] Search Library\n\n\t\t\t\t\t\t[3] Checkout a Book\n\n\t\t\t\t\t\t[4] Return a Book\n\n\t\t\t\t\t\t[5] Exit Library");
+            
             string UserInput = Console.ReadLine();
             return UserInput;
         }
@@ -27,7 +28,7 @@ namespace GCLibrary2018
                 }
             }
             else
-                Console.WriteLine("No books matched that search!");
+                Console.WriteLine("\nNo books matched that search!\n");
         }
 
         public static void WriteToFile(ref List<Book> BookList)
