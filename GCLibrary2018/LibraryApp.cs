@@ -10,7 +10,8 @@ namespace GCLibrary2018
 {
     class LibraryApp
     {
-        public static List<Book> CreateBookList(string FileName)
+        // creates list of books in library from Library.txt
+        public static List<Book> CreateBookList(string FileName) 
         {
             List<Book> Booklist = new List<Book>();
             StreamReader Reader = new StreamReader(FileName);
@@ -30,7 +31,8 @@ namespace GCLibrary2018
             return Booklist;
         }
 
-        public static void PrintBookList(ref List<Book> BookList)
+        // prints all books in library
+        public static void PrintBookList(ref List<Book> BookList) 
         {
             Console.WriteLine(new string('=', 168));
             Console.Clear();
@@ -44,7 +46,9 @@ namespace GCLibrary2018
             Console.WriteLine(new string('=', 168));
         }
 
-        public static List<Book> LookByAuthor(ref List<Book> BookList, string Author)
+        // searches library by author keyword and
+        // returns list of books with specified substring in author name
+        public static List<Book> LookByAuthor(ref List<Book> BookList, string Author) 
         {
             List<Book> authorbooks = new List<Book>();
             foreach (Book book in BookList)
@@ -55,7 +59,9 @@ namespace GCLibrary2018
             return authorbooks;
         }
 
-        public static List<Book> LookByTitleKeyword (ref List<Book> BookList, string keyword)
+        // searches library by title keyword and
+        // returns list of books with specified substring in title
+        public static List<Book> LookByTitleKeyword (ref List<Book> BookList, string keyword) 
         {
             List<Book> titlebooks = new List<Book>();
             foreach (Book book in BookList)
@@ -66,7 +72,8 @@ namespace GCLibrary2018
             return titlebooks;
         }
 
-        public static void CheckOutBook (Book book)
+        // changes status of book from On Shelf to Checked Out
+        public static void CheckOutBook (Book book) 
         {
             if (book.status == "Checked Out")
             {
@@ -83,7 +90,8 @@ namespace GCLibrary2018
             }
         }
 
-        public static void ReturnBook (Book book)
+        // changes status of book from Checked Out to On Shelf
+        public static void ReturnBook (Book book) 
         {
             book.status = "On Shelf";
             book.duedate = DateTime.Today.ToString();
@@ -91,6 +99,7 @@ namespace GCLibrary2018
             Console.WriteLine("\n\n\n\n\t\t\t\t\t\t\t\t    Thank you for not stealing our book!\n");
         }
 
+        // adds donated book to library
         public static void DonateBook(ref List<Book> BookList)
         {
             Console.Clear();
@@ -105,7 +114,7 @@ namespace GCLibrary2018
             BookList.Add(Donated);
 
             Console.Clear();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Console.WriteLine("\n\n\n\n\t\t\t\t\t\t\t\t\tThank you for your donation!");
         }
     }

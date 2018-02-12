@@ -25,22 +25,22 @@ namespace GCLibrary2018
 
             while (true)
             {
-                if (Input == "1")
+                if (Input == "1") // displays library
                 {
                     LibraryApp.PrintBookList(ref BookList);
                     Input = Menu.GCLMenu();
                 }
-                else if (Input == "2")
+                else if (Input == "2") // starts search prompt
                 {
                     Validation.Search(ref BookList);
                     Input = Menu.GCLMenu();
                 }
-                else if (Input == "3")
+                else if (Input == "3") // checkout book
                 {
                     LibraryApp.CheckOutBook(Validation.ConfirmBook(ref BookList));
                     Input = Menu.GCLMenu();
                 }
-                else if (Input == "4")
+                else if (Input == "4") // return a book
                 {
                     List<Book> ReturnList = Validation.CreateReturnList(ref BookList);
                     if (ReturnList.Count == 0)
@@ -56,12 +56,12 @@ namespace GCLibrary2018
                     }
                     
                 }
-                else if (Input == "5")
+                else if (Input == "5") // donate a book
                 {
                     LibraryApp.DonateBook(ref BookList);
                     Input = Menu.GCLMenu();
                 }
-                else if (Input == "6")
+                else if (Input == "6") // exit program
                 {
                     Menu.WriteToFile(ref BookList);
                     break;

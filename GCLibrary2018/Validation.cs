@@ -9,7 +9,8 @@ namespace GCLibrary2018
 {
     class Validation
     {
-        public static Book ConfirmBook(ref List<Book> BookList)
+        // confirms book to be checked out
+        public static Book ConfirmBook(ref List<Book> BookList) 
         {
             Console.Clear();
             int z = 1;
@@ -34,7 +35,8 @@ namespace GCLibrary2018
             }
         }
 
-        public static Book ConfirmReturn(List<Book> CheckedOut)
+        // confirms book to be returned
+        public static Book ConfirmReturn(List<Book> CheckedOut) 
         {
             int z = 1;
             foreach (Book x in CheckedOut)
@@ -58,7 +60,8 @@ namespace GCLibrary2018
             }
         }
 
-        public static List<Book> CreateReturnList(ref List<Book> BookList)
+        // creates list of books that are checked out
+        public static List<Book> CreateReturnList(ref List<Book> BookList) 
         {
             List<Book> CheckedOut = new List<Book>();
             for (int i = 0; i < BookList.Count; i++)
@@ -71,6 +74,7 @@ namespace GCLibrary2018
             return CheckedOut;
         }
 
+        // determines whether searching by author or title keywords
         public static void Search(ref List<Book>BookList)
         {
             Console.Clear();
