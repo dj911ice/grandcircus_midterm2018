@@ -7,6 +7,7 @@ Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt
 The Pragmatic Programmer,Andrew Hunt David Thomas,02/10/2018 12:00:00 AM,On Shelf
 HTML5 and CSS3 (2nd edition),Brian P. Hogan,1/1/0001,On Shelf
 Simplifying JavaScript,Joe Morgan,1/1/0001,On Shelf
-Hello Android (4th edition),Ed Burnette,1/1/0001,On Shelf
+Hello Android (4th edition),Ed Burnette,2/11/2018 12:00:00 AM,On Shelf
 Programming Ruby 1.9 & 2.0,Dave Thomas Chad Fowler Andy Hunt,1/1/0001,On Shelf
 Learning ASP.NET Core 2.0,Jason De Oliveira Michel Bruchet,2/9/2018 12:00:00 AM,On Shelf
+Fight Club,Chuck Palahniuk,2/11/2018 12:00:00 AM,On Shelf

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 
 namespace GCLibrary2018
 {
@@ -72,7 +73,6 @@ namespace GCLibrary2018
                 Console.Clear();
                 Console.WriteLine($"\n\n\n\n\n\t\t\t\tSorry this book is checked out, the return day is {book.duedate}\n\n\n\n");
             }
-                
             else
             {
                 Console.Clear();
@@ -89,6 +89,24 @@ namespace GCLibrary2018
             book.duedate = DateTime.Today.ToString();
             Console.Clear();
             Console.WriteLine("\n\n\n\n\t\t\t\t\tThank you for not stealing our book!\n\n\n");
+        }
+
+        public static void DonateBook(ref List<Book> BookList)
+        {
+            Console.Clear();
+            Console.WriteLine("\n\nPlease enter the title of the book\n\n");
+            string DonateTitle = Console.ReadLine();
+            Console.WriteLine("\n\nPlease enter the author's name\n\n");
+            string DonateAuthor = Console.ReadLine();
+
+            Book Donated = new Book();
+            Donated.title = DonateTitle;
+            Donated.author = DonateAuthor;
+            BookList.Add(Donated);
+
+            Console.Clear();
+            Thread.Sleep(2000);
+            Console.WriteLine("\n\n\n\n\t\t\t\t\tThank you for your donation!");
         }
     }
 }

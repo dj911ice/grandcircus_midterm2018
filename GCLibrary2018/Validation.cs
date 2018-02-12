@@ -11,14 +11,15 @@ namespace GCLibrary2018
     {
         public static Book ConfirmBook(ref List<Book> BookList)
         {
+            Console.Clear();
             int z = 1;
             foreach (Book x in BookList)
             {
-                Console.Write($"\n\n\t{z}..... {x.title} by {x.author}\n\n");
+                Console.Write($"\n\t{z}..... {x.title} by {x.author}\n");
                 z++;
             }
 
-            Console.WriteLine("\n\n\tWhich book are you referring to? (1-12)\n\n");
+            Console.WriteLine("\n\n\tWhich book would you like to checkout? ( 1 - 12 )\n\n");
             string input = Console.ReadLine();
             int.TryParse(input, out int BookIndex);
             while (true)
@@ -53,7 +54,7 @@ namespace GCLibrary2018
                     Console.WriteLine($"\n{z}..... {x.title} by {x.author}\n");
                     z++;
                 }
-                Console.WriteLine($"\n\nWhich book would you like to return?\n\n(Will ask twice to confirm))\n");
+                Console.WriteLine($"\n\nWhich book would you like to return? ( 1 - {z-1} )\n\n");
                 string input = Console.ReadLine();
 
                 int.TryParse(input, out int BookIndex);
@@ -72,18 +73,19 @@ namespace GCLibrary2018
 
         public static void Search(ref List<Book>BookList)
         {
-            Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n\n");
+            Console.Clear();
+            Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n");
             string TorA = Console.ReadLine().ToLower();
             if (Regex.IsMatch(TorA, "^(t|title)$"))
             {
-                Console.WriteLine("\n\nPlease enter a title...\n\n");
+                Console.WriteLine("\n\nPlease enter a title, word, or keyword!\n\n");
                 string Input = Console.ReadLine();
                 Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
             }
 
             if (Regex.IsMatch(TorA, "^(a|author)$"))
             {
-                Console.WriteLine("\n\nPlease enter an author...\n\n");
+                Console.WriteLine("\n\nPlease enter a name or keyword\n\n");
                 string Input = Console.ReadLine();
                 Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
             }

@@ -25,7 +25,7 @@ namespace GCLibrary2018
         {
             title = "";
             author = "";
-            duedate = DateTime.Now.ToString();
+            duedate = DateTime.Today.ToString();
             status = "On Shelf";
         }
     }

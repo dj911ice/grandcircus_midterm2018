@@ -50,12 +50,17 @@ namespace GCLibrary2018
                     } 
                     else
                     {
-                        LibraryApp.ReturnBook(Validation.ConfirmReturn(ref BookList));
+                        LibraryApp.ReturnBook(ToReturn);
                         Input = Menu.GCLMenu();
                     }
                     
                 }
                 else if (Input == "5")
+                {
+                    LibraryApp.DonateBook(ref BookList);
+                    Input = Menu.GCLMenu();
+                }
+                else if (Input == "6")
                 {
                     Menu.WriteToFile(ref BookList);
                     break;

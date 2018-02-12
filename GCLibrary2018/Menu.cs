@@ -11,8 +11,8 @@ namespace GCLibrary2018
     {
         public static string GCLMenu ()
         {
-            Console.WriteLine("\t\t\t\t\tEnter a number to perform an action!");
-            Console.WriteLine("\n\t\t\t\t\t\t[1] Display Library\n\n\t\t\t\t\t\t[2] Search Library\n\n\t\t\t\t\t\t[3] Checkout a Book\n\n\t\t\t\t\t\t[4] Return a Book\n\n\t\t\t\t\t\t[5] Exit Library");
+            Console.WriteLine("\t\t\t\t\tEnter a number to do a thing!");
+            Console.WriteLine("\n\t\t\t\t\t\t[1] Display Library\n\n\t\t\t\t\t\t[2] Search Library\n\n\t\t\t\t\t\t[3] Checkout a Book\n\n\t\t\t\t\t\t[4] Return a Book\n\n\t\t\t\t\t\t[5] Donate a book\n\n\t\t\t\t\t\t[6] Exit Library");
             
             string UserInput = Console.ReadLine();
             return UserInput;
