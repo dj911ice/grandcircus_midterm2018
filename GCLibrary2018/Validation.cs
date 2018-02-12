@@ -34,16 +34,8 @@ namespace GCLibrary2018
             }
         }
 
-        public static Book ConfirmReturn(ref List<Book> BookList)
+        public static Book ConfirmReturn(List<Book> CheckedOut)
         {
-            List<Book> CheckedOut = new List<Book>();
-            for (int i = 0; i < BookList.Count; i++)
-            {
-                if (BookList[i].status == "Checked Out")
-                {
-                    CheckedOut.Add(BookList[i]);
-                }
-            }
             if (CheckedOut.Count == 0)
                 return null;
             else
@@ -54,7 +46,7 @@ namespace GCLibrary2018
                     Console.WriteLine($"\n{z}..... {x.title} by {x.author}\n");
                     z++;
                 }
-                Console.WriteLine($"\n\nWhich book would you like to return? ( 1 - {z-1} )\n\n");
+                Console.WriteLine($"\n\nWhich book would you like to return? ( 1 - {z - 1} )\n\n");
                 string input = Console.ReadLine();
 
                 int.TryParse(input, out int BookIndex);
@@ -68,7 +60,21 @@ namespace GCLibrary2018
                         int.TryParse(Console.ReadLine(), out BookIndex);
                     }
                 }
-            }  
+            }
+        }
+
+        public static List<Book> CreateReturnList(ref List<Book> BookList)
+        {
+            List<Book> CheckedOut = new List<Book>();
+            for (int i = 0; i < BookList.Count; i++)
+            {
+                if (BookList[i].status == "Checked Out")
+                {
+                    CheckedOut.Add(BookList[i]);
+                }
+            }
+            return CheckedOut;
+            
         }
 
         public static void Search(ref List<Book>BookList)
@@ -76,18 +82,25 @@ namespace GCLibrary2018
             Console.Clear();
             Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n");
             string TorA = Console.ReadLine().ToLower();
-            if (Regex.IsMatch(TorA, "^(t|title)$"))
+            while (true)
             {
-                Console.WriteLine("\n\nPlease enter a title, word, or keyword!\n\n");
-                string Input = Console.ReadLine();
-                Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
-            }
-
-            if (Regex.IsMatch(TorA, "^(a|author)$"))
-            {
-                Console.WriteLine("\n\nPlease enter a name or keyword\n\n");
-                string Input = Console.ReadLine();
-                Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
+                if (Regex.IsMatch(TorA, "^(t|title)$"))
+                {
+                    Console.WriteLine("\n\nPlease enter a title, word, or keyword!\n\n");
+                    string Input = Console.ReadLine();
+                    Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
+                }
+                else if (Regex.IsMatch(TorA, "^(a|author)$"))
+                {
+                    Console.WriteLine("\n\nPlease enter a name or keyword\n\n");
+                    string Input = Console.ReadLine();
+                    Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
+                }
+                else
+                {
+                    Console.WriteLine("I couldn't understand that! Try again, please!");
+                    TorA = Console.ReadLine().ToLower();
+                }
             }
         }
     }

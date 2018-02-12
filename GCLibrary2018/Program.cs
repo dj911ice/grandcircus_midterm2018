@@ -41,8 +41,8 @@ namespace GCLibrary2018
                 }
                 else if (Input == "4")
                 {
-                    Book ToReturn = Validation.ConfirmReturn(ref BookList);
-                    if (ToReturn == null)
+                    List<Book> ReturnList = Validation.CreateReturnList(ref BookList);
+                    if (ReturnList.Count == 0)
                     {
                         Console.Clear();
                         Console.WriteLine("\n\n\n\n\n\n\n\t\t\t\t\t   There are no books to return!\n\n\n");
@@ -50,7 +50,7 @@ namespace GCLibrary2018
                     } 
                     else
                     {
-                        LibraryApp.ReturnBook(ToReturn);
+                        LibraryApp.ReturnBook(Validation.ConfirmReturn(ReturnList));
                         Input = Menu.GCLMenu();
                     }
                     
