@@ -1,4 +1,4 @@
-Google It!,Kamel Rushaidat,2/12/2018 12:00:00 AM,On Shelf
+Google It!,Kamel Rushaidat,02/12/2018 12:00:00 AM,On Shelf
 Choke,Chuck Palahniuk,02/10/2018 12:00:00 AM,On Shelf
 House of Leaves, Mark Z. Danielewski,02/11/2018 12:00:00 AM,On Shelf
 Fear and Loathing in Las Vegas,Hunter S. Thompson,02/11/2018 12:00:00 AM,On Shelf
@@ -12,3 +12,4 @@ Programming Ruby 1.9 & 2.0,Dave Thomas Chad Fowler Andy Hunt,1/1/0001,On Shelf
 Learning ASP.NET Core 2.0,Jason De Oliveira Michel Bruchet,2/9/2018 12:00:00 AM,On Shelf
 Fight Club,Chuck Palahniuk,2/11/2018 12:00:00 AM,On Shelf
 Book!,Dan Edwards,2/12/2018 12:00:00 AM,On Shelf
+Justin's Book!,Justin Dickerson,02/12/2018 12:00:00 AM,On Shelf

@@ -11,8 +11,8 @@ namespace GCLibrary2018
     {
         public static string GCLMenu ()
         {
-            Console.WriteLine("\t\t\t\t\tEnter a number to do a thing!");
-            Console.WriteLine("\n\t\t\t\t\t\t[1] Display Library\n\n\t\t\t\t\t\t[2] Search Library\n\n\t\t\t\t\t\t[3] Checkout a Book\n\n\t\t\t\t\t\t[4] Return a Book\n\n\t\t\t\t\t\t[5] Donate a book\n\n\t\t\t\t\t\t[6] Exit Library");
+            Console.WriteLine("\n\t\t\t\t\t\t\t\t    Enter a number to make a selection!");
+            Console.WriteLine("\n\n\t\t\t   [1] Display Library [2] Search Library [3] Checkout a Book [4] Return a Book [5] Donate a book [6] Exit Library");
             
             string UserInput = Console.ReadLine();
             return UserInput;
@@ -24,7 +24,7 @@ namespace GCLibrary2018
             {
                 foreach (Book b in BookList)
                 {
-                    Console.WriteLine($"{b.title} by {b.author}");
+                    Console.WriteLine($"\t\t\t\t\t  {b.title} by {b.author}");
                 }
             }
             else

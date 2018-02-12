@@ -15,11 +15,11 @@ namespace GCLibrary2018
             int z = 1;
             foreach (Book x in BookList)
             {
-                Console.Write($"\n\t{z}..... {x.title} by {x.author}\n");
+                Console.Write($"\n\n\t\t\t\t\t\t{z}..... {x.title} by {x.author}");
                 z++;
             }
 
-            Console.WriteLine("\n\n\tWhich book would you like to checkout? ( 1 - 12 )\n\n");
+            Console.WriteLine("n\n\n\n\t\t\t\t\t\tWhich book would you like to checkout? ( 1 - 12 )\n");
             string input = Console.ReadLine();
             int.TryParse(input, out int BookIndex);
             while (true)
@@ -39,10 +39,10 @@ namespace GCLibrary2018
             int z = 1;
             foreach (Book x in CheckedOut)
             {
-                Console.WriteLine($"\n{z}..... {x.title} by {x.author}\n");
+                Console.WriteLine($"\n\n\t{z}..... {x.title} by {x.author}\n");
                 z++;
             }
-            Console.WriteLine($"\n\nWhich book would you like to return? ( 1 - {z - 1} )\n\n");
+            Console.WriteLine($"\n\n\tWhich book would you like to return? ( 1 - {z - 1} )\n\n");
             string input = Console.ReadLine();
 
             int.TryParse(input, out int BookIndex);
@@ -69,33 +69,34 @@ namespace GCLibrary2018
                 }
             }
             return CheckedOut;
-            
         }
 
         public static void Search(ref List<Book>BookList)
         {
             Console.Clear();
-            Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n");
+            Console.WriteLine("\n\n\n\n\t\t\t\t\t\t\t\tDo you want to search by Title or Author? (t/a)\n");
             string TorA = Console.ReadLine().ToLower();
             while (true)
             {
                 if (Regex.IsMatch(TorA, "^(t|title)$"))
                 {
-                    Console.WriteLine("\n\nPlease enter a title, word, or keyword!\n\n");
+                    Console.WriteLine("\n\n\t\t\t\t\t\t\t\t   Please enter a title, word, or keyword!\n\n");
                     string Input = Console.ReadLine();
                     Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
                     break;
                 }
                 else if (Regex.IsMatch(TorA, "^(a|author)$"))
                 {
-                    Console.WriteLine("\n\nPlease enter a name or keyword\n\n");
+                    Console.WriteLine("\n\n\t\t\t\t\t\t\t\t    Please enter a name or keyword\n\n");
                     string Input = Console.ReadLine();
                     Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("I couldn't understand that! Try again, please!");
+                    Console.Clear();
+                    Console.WriteLine("\n\n\n\n\t\t\t\t\t\t\t\tI couldn't understand that! Try again, please!");
+                    Console.WriteLine("\n\n\n\n\t\t\t\t\t\t\t\tDo you want to search by Title or Author? (t/a)\n");
                     TorA = Console.ReadLine().ToLower();
                 }
             }

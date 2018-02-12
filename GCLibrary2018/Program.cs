@@ -13,9 +13,10 @@ namespace GCLibrary2018
 
         static void Main(string[] args)
         {
-            Console.WriteLine("\n\n\n\n\n\t\t\t\t\tWelcome to the Grand Circus Library!\n\n");
+            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t    Welcome to the Grand Circus Library!\n\n");
             RunProgram();
-            Console.WriteLine("Goodbye!");
+            Console.Clear();
+            Console.WriteLine("\n\n\n\n\t\t\t\t\t\t\t  Thank you for visiting the Grand Circus Library\n\n\n\t\t\t\t\t\t\t\t\tHave a great Day!\n\n\t\t\t\t\t\t\t\t\t    Goodbye!");
         }
 
         public static void RunProgram()
@@ -45,7 +46,7 @@ namespace GCLibrary2018
                     if (ReturnList.Count == 0)
                     {
                         Console.Clear();
-                        Console.WriteLine("\n\n\n\n\n\n\n\t\t\t\t\t   There are no books to return!\n\n\n");
+                        Console.WriteLine("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t     There are no books to return!\n\n");
                         Input = Menu.GCLMenu();
                     } 
                     else
