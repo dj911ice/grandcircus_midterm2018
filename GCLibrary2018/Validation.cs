@@ -89,12 +89,14 @@ namespace GCLibrary2018
                     Console.WriteLine("\n\nPlease enter a title, word, or keyword!\n\n");
                     string Input = Console.ReadLine();
                     Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
+                    break;
                 }
                 else if (Regex.IsMatch(TorA, "^(a|author)$"))
                 {
                     Console.WriteLine("\n\nPlease enter a name or keyword\n\n");
                     string Input = Console.ReadLine();
                     Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
+                    break;
                 }
                 else
                 {
