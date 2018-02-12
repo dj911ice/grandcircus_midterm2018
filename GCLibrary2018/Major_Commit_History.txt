@@ -67,3 +67,175 @@ index 0180156..ffa30b8 100644
 @@ -1,12 +1,12 @@
 -Google It!,Kamel Rushaidat,1/1/0001,OnShelf
 
+
+===========================================================
+Commit Number: 47
+===========================================================
+Author: DanE <edwardsdan001@gmail.com>
+Date:   Sun Feb 11 21:40:01 2018 -0500
+
+    Added donation option, see MajorCommitHistory
+
+diff --git a/GCLibrary2018/Book.cs b/GCLibrary2018/Book.cs
+index eb12b80..80fcc08 100644
+--- a/GCLibrary2018/Book.cs
++++ b/GCLibrary2018/Book.cs
+@@ -25,7 +25,7 @@ namespace GCLibrary2018
+         {
+             title = "";
+             author = "";
+-            duedate = DateTime.Now.ToString();
++            duedate = DateTime.Today.ToString();
+             status = "On Shelf";
+         }
+     }
+diff --git a/GCLibrary2018/Library.txt b/GCLibrary2018/Library.txt
+index 8ea0107..9994c7d 100644
+--- a/GCLibrary2018/Library.txt
++++ b/GCLibrary2018/Library.txt
+@@ -7,6 +7,7 @@ Pragmatic Unit Testing in C# with NUnit (2nd edition),Andy Hunt Dave Thomas Matt
+ The Pragmatic Programmer,Andrew Hunt David Thomas,02/10/2018 12:00:00 AM,On Shelf
+ HTML5 and CSS3 (2nd edition),Brian P. Hogan,1/1/0001,On Shelf
+ Simplifying JavaScript,Joe Morgan,1/1/0001,On Shelf
+-Hello Android (4th edition),Ed Burnette,1/1/0001,On Shelf
++Hello Android (4th edition),Ed Burnette,2/11/2018 12:00:00 AM,On Shelf
+ Programming Ruby 1.9 & 2.0,Dave Thomas Chad Fowler Andy Hunt,1/1/0001,On Shelf
+ Learning ASP.NET Core 2.0,Jason De Oliveira Michel Bruchet,2/9/2018 12:00:00 AM,On Shelf
++Fight Club,Chuck Palahniuk,2/11/2018 12:00:00 AM,On Shelf
+diff --git a/GCLibrary2018/LibraryApp.cs b/GCLibrary2018/LibraryApp.cs
+index 37f6764..b3c4610 100644
+--- a/GCLibrary2018/LibraryApp.cs
++++ b/GCLibrary2018/LibraryApp.cs
+@@ -4,6 +4,7 @@ using System.Linq;
+ using System.Text;
+ using System.Threading.Tasks;
+ using System.IO;
++using System.Threading;
+
+ namespace GCLibrary2018
+ {
+@@ -72,7 +73,6 @@ namespace GCLibrary2018
+                 Console.Clear();
+                 Console.WriteLine($"\n\n\n\n\n\t\t\t\tSorry this book is checked out, the return day is {book.duedate}\n\n\n\n");
+             }
+-
+             else
+             {
+                 Console.Clear();
+@@ -90,5 +90,23 @@ namespace GCLibrary2018
+             Console.Clear();
+             Console.WriteLine("\n\n\n\n\t\t\t\t\tThank you for not stealing our book!\n\n\n");
+         }
++
++        public static void DonateBook(ref List<Book> BookList)
++        {
++            Console.Clear();
++            Console.WriteLine("\n\nPlease enter the title of the book\n\n");
++            string DonateTitle = Console.ReadLine();
++            Console.WriteLine("\n\nPlease enter the author's name\n\n");
++            string DonateAuthor = Console.ReadLine();
++
++            Book Donated = new Book();
++            Donated.title = DonateTitle;
++            Donated.author = DonateAuthor;
++            BookList.Add(Donated);
++
++            Console.Clear();
++            Thread.Sleep(2000);
++            Console.WriteLine("\n\n\n\n\t\t\t\t\tThank you for your donation!");
++        }
+     }
+ }
+\ No newline at end of file
+diff --git a/GCLibrary2018/Menu.cs b/GCLibrary2018/Menu.cs
+index 4c13611..b3e4231 100644
+--- a/GCLibrary2018/Menu.cs
++++ b/GCLibrary2018/Menu.cs
+@@ -11,8 +11,8 @@ namespace GCLibrary2018
+     {
+         public static string GCLMenu ()
+         {
+-            Console.WriteLine("\t\t\t\t\tEnter a number to perform an action!");
+-            Console.WriteLine("\n\t\t\t\t\t\t[1] Display Library\n\n\t\t\t\t\t\t[2] Search Library\n\n\t\t\t\t\t\t[3] Checkout a Book\n\n\t\t\t\t\t\t[4] Return a Book\n\n\t\t\t\t\t\t[5] Exit Library");
++            Console.WriteLine("\t\t\t\t\tEnter a number to do a thing!");
++            Console.WriteLine("\n\t\t\t\t\t\t[1] Display Library\n\n\t\t\t\t\t\t[2] Search Library\n\n\t\t\t\t\t\t[3] Checkout a Book\n\n\t\t\t\t\t\t[4] Return a Book\n\n\t\t\t\t\t\t[5] Donate a book\n\n\t\t\t\t\t\t[6] Exit Library");
+
+             string UserInput = Console.ReadLine();
+             return UserInput;
+diff --git a/GCLibrary2018/Program.cs b/GCLibrary2018/Program.cs
+index e31df0d..717971e 100644
+--- a/GCLibrary2018/Program.cs
++++ b/GCLibrary2018/Program.cs
+@@ -50,12 +50,17 @@ namespace GCLibrary2018
+                     }
+                     else
+                     {
+-                        LibraryApp.ReturnBook(Validation.ConfirmReturn(ref BookList));
++                        LibraryApp.ReturnBook(ToReturn);
+                         Input = Menu.GCLMenu();
+                     }
+
+                 }
+                 else if (Input == "5")
++                {
++                    LibraryApp.DonateBook(ref BookList);
++                    Input = Menu.GCLMenu();
++                }
++                else if (Input == "6")
+                 {
+                     Menu.WriteToFile(ref BookList);
+                     break;
+diff --git a/GCLibrary2018/Validation.cs b/GCLibrary2018/Validation.cs
+index 24d7a28..7d08ef6 100644
+--- a/GCLibrary2018/Validation.cs
++++ b/GCLibrary2018/Validation.cs
+@@ -11,14 +11,15 @@ namespace GCLibrary2018
+     {
+         public static Book ConfirmBook(ref List<Book> BookList)
+         {
++            Console.Clear();
+             int z = 1;
+             foreach (Book x in BookList)
+             {
+-                Console.Write($"\n\n\t{z}..... {x.title} by {x.author}\n\n");
++                Console.Write($"\n\t{z}..... {x.title} by {x.author}\n");
+                 z++;
+             }
+
+-            Console.WriteLine("\n\n\tWhich book are you referring to? (1-12)\n\n");
++            Console.WriteLine("\n\n\tWhich book would you like to checkout? ( 1 - 12 )\n\n");
+             string input = Console.ReadLine();
+             int.TryParse(input, out int BookIndex);
+             while (true)
+@@ -53,7 +54,7 @@ namespace GCLibrary2018
+                     Console.WriteLine($"\n{z}..... {x.title} by {x.author}\n");
+                     z++;
+                 }
+-                Console.WriteLine($"\n\nWhich book would you like to return?\n\n(Will ask twice to confirm))\n");
++                Console.WriteLine($"\n\nWhich book would you like to return? ( 1 - {z-1} )\n\n");
+                 string input = Console.ReadLine();
+
+                 int.TryParse(input, out int BookIndex);
+@@ -72,18 +73,19 @@ namespace GCLibrary2018
+
+         public static void Search(ref List<Book>BookList)
+         {
+-            Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n\n");
++            Console.Clear();
++            Console.WriteLine("\n\nDo you want to search by Title or Author? (t/a)\n");
+             string TorA = Console.ReadLine().ToLower();
+             if (Regex.IsMatch(TorA, "^(t|title)$"))
+             {
+-                Console.WriteLine("\n\nPlease enter a title...\n\n");
++                Console.WriteLine("\n\nPlease enter a title, word, or keyword!\n\n");
+                 string Input = Console.ReadLine();
+                 Menu.PrintTitles(LibraryApp.LookByTitleKeyword(ref BookList, Input));
+             }
+
+             if (Regex.IsMatch(TorA, "^(a|author)$"))
+             {
+-                Console.WriteLine("\n\nPlease enter an author...\n\n");
++                Console.WriteLine("\n\nPlease enter a name or keyword\n\n");
+                 string Input = Console.ReadLine();
+                 Menu.PrintTitles(LibraryApp.LookByAuthor(ref BookList, Input));
+             }
